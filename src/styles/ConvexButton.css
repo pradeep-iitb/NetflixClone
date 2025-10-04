@@ -1,0 +1,58 @@
+.convex-red-button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Multiple shadow layers for the exact effect */
+  box-shadow: 
+    /* Inner white glow */
+    inset 0 2px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    
+    /* White ring */
+    0 0 0 3px rgba(255, 255, 255, 0.3),
+    
+    /* Blue outer ring */
+    0 0 0 6px rgba(59, 130, 246, 0.4),
+    
+    /* Soft blue glow */
+    0 0 0 10px rgba(59, 130, 246, 0.2),
+    
+    /* Drop shadow */
+    0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.convex-red-button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    inset 0 2px 6px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.4),
+    0 0 0 6px rgba(59, 130, 246, 0.5),
+    0 0 0 12px rgba(59, 130, 246, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.convex-red-button::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 24px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.convex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1f2937;
+}

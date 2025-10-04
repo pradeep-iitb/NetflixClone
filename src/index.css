@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Netflix Font */
+@font-face {
+  font-family: 'NetflixSans';
+  src: url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Regular.woff2') format('woff2'),
+       url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NetflixSans';
+  src: url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Medium.woff2') format('woff2'),
+       url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NetflixSans';
+  src: url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Bold.woff2') format('woff2'),
+       url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/NetflixSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'NetflixSans', 'Inter', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* Custom Components */
+@layer components {
+  .netflix-button {
+    @apply bg-netflix-red text-white font-medium px-6 py-3 rounded hover:bg-red-700 transition-colors duration-200 cursor-pointer;
+  }
+  
+  .netflix-input {
+    @apply bg-gray-800 border border-gray-600 text-white px-4 py-3 rounded focus:outline-none focus:border-white transition-colors duration-200;
+  }
+  
+  .dropdown {
+    @apply absolute top-full left-0 bg-black border border-gray-700 rounded-lg shadow-lg py-2 z-50 min-w-max;
+  }
+  
+  .dropdown-item {
+    @apply block px-4 py-2 text-sm text-white hover:bg-gray-800 transition-colors duration-150 cursor-pointer;
+  }
+  
+  .faq-item {
+    @apply border-b border-gray-800;
+  }
+  
+  .faq-header {
+    @apply flex justify-between items-center p-6 bg-gray-800 hover:bg-gray-700 cursor-pointer transition-colors duration-200;
+  }
+  
+  .trending-card {
+    @apply relative rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105;
+  }
+  
+  .trending-number {
+    @apply absolute -left-4 top-1/2 transform -translate-y-1/2 text-8xl font-black text-gray-600 z-10 stroke-2 stroke-gray-400;
+    -webkit-text-stroke: 2px #374151;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Hide scrollbar for carousel */
+.carousel-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}

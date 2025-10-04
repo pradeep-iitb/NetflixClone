@@ -1,0 +1,28 @@
+/* App specific styles - most styling is handled by Tailwind CSS and index.css */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations for enhanced user experience */
+.netflix-logo-hover {
+  transition: transform 0.3s ease;
+}
+
+.netflix-logo-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid #e50914;
+  outline-offset: 2px;
+}
